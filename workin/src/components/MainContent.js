@@ -1,9 +1,11 @@
 import React from "react"
 
 function MainContent(){
+    const date = new Date()
+
     return (
         <main>
-            <p>Most of the content goes here.</p>
+            <p>It's currently {date.getHours() %12 } o'clock.</p>
         </main>
     )
 }
