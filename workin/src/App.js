@@ -5,11 +5,11 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import MainContent from './components/MainContent';
 
-const App = () => 
-<div>
-    <Header />
-    <MainContent />
-    <Footer />
-</div>
+const App = () =>
+    <div>
+        <Header />
+        <MainContent />
+        <Footer />
+    </div>
 
 export default App;
