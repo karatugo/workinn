@@ -1,15 +1,15 @@
 import React from "react"
-import TodoItem from './TodoItem.js';
-
+import TodoItem from './TodoItem';
+import todosData from './todosData'
 
 function MainContent() {
 
+    const todoComponents = todosData.map(item => <TodoItem key={item.id} item={item} />)
+
     return (
         <main>
-            <div className="todo-list" style={{ }}>
-                <TodoItem item={{ task: "Do this" }}/>
-                <TodoItem item={{ task: "Do that" }}/>
-                <TodoItem item={{ task: "Do that 2" }}/>
+            <div className="todo-list" style={{}}>
+                {todoComponents}
             </div>
         </main>
     )

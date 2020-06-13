@@ -12,4 +12,14 @@ const App = () =>
         <Footer />
     </div>
 
+// function App(params) {
+//     return (
+//         <div>
+//             <Header />
+//             <MainContent />
+//             <Footer />
+//         </div>
+//     )
+// }
+
 export default App;
