@@ -8,9 +8,22 @@ class MainContent extends React.Component {
     constructor() {
         super()
         this.state = {
-            todos: todosData
+            todos: todosData,
+            isLoading: true
         }
         this.handleChange = this.handleChange.bind(this)
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState(prevState => {
+                return {
+                    todos: prevState.todos,
+                    isLoading: false
+
+                }
+            })
+        }, 1500)
     }
 
     handleChange(id) {
@@ -29,13 +42,17 @@ class MainContent extends React.Component {
     }
 
     render() {
-        const todoComponents = this.state.todos.map(
-            item => <TodoItem key={item.id} item={item} handleChange={this.handleChange} />)
+        const todoComponents = this.state.todos.map(item =>
+            <TodoItem
+                key={item.id}
+                item={item}
+                handleChange={this.handleChange}
+            />)
 
         return (
             <main>
                 <div className="todo-list" style={{}}>
-                    {todoComponents}
+                    {this.state.isLoading ? <h1>Loading...</h1> : todoComponents}
                 </div>
             </main >
         )
